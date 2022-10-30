@@ -10,7 +10,7 @@ client.setConfig({
 });
 
 async function run() {
-    const response = await client.lists.getListMembersInfo("d643060e11",{
+    const response = await client.lists.getListMembersInfo(ownersListId,{
       count: 1000,
       fields: ["members.id", "members.email_address", "members.full_name"],
       // offset: 200
