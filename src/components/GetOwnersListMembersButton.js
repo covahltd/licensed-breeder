@@ -2,8 +2,8 @@ import React from 'react';
 const dotenv = require("dotenv").config();
 const client = require("@mailchimp/mailchimp_marketing");
 
-const apiKey = process.env.MAILCHIMP_API_KEY;
-const server = process.env.MAILCHIMP_SERVER;
+const apiKey = process.env.local.MAILCHIMP_API_KEY;
+const server = process.env.local.MAILCHIMP_SERVER;
 
 client.setConfig({
   apiKey: apiKey,
@@ -19,9 +19,11 @@ export const GetOwnersListMembersButton = () => {
     });
     // console.log(response.members.slice(-1)[0] );
     console.log(response);
-  }
-
-  return {
-    <button onClick={() => run()}>run GetOwnersListMembersButton</button>
   };
-}
+
+  run();
+  
+  return {
+    <button onClick={() => run()}>GetOwnersListMembersButton</button>
+  };
+};
