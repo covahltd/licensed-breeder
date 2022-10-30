@@ -1,34 +1,33 @@
 import React from "react";
 import "./App.css";
-import "./printDiv.js";
-import "./getOwnersList.js";
-
+// import {GetOwnersListMembersButton} from "./components/GetOwnersListMembersButton.js";
+import {PrintDivButton} from "./components/PrintDivButton.js"
 
 function App() {
   return (
     <div>
-      <stript type="module" src="printDiv.js" />
       <div class="intro">
         <h1>Contract Generator</h1>
-        <p>Pick a contract from the following dropdown:</p><br/>
-        <label for="contract-type">Choose a contract:</label><br/>
+        <p>Pick a contract from the following dropdown:</p>
+        <br />
+        <label for="contract-type">Choose a contract:</label>
+        <br />
         <select name="contract-type" id="contract-type">
           <option value="standard_puppy">Standard Puppy</option>
           <option value="breeding_terms_puppy">Breeding Terms Puppy</option>
           <option value="*------------------*"></option>
           <option value="standard_adult">Standard Adult</option>
           <option value="breeding_terms_adult">Breeding Terms Adult</option>
-        </select><br/>
-        <input
-          type="button"
-          onClick="printDiv('printableArea')"
-          value="Print"
-        ></input>
-        <input type="button" onClick="run()" value="Run getListOwners"></input>
+        </select>
+        <br />
+        <input type="button" onclick="run()" value="Run getListOwners"></input>
+        <br />
+        <PrintDivButton></PrintDivButton>
+        <br />
       </div>
       <div class="page" id="printableArea">
         <table>
-          <colgroup>
+          <colgroup>        
             <col width="2%"></col>
             <col width="2%"></col>
             <col width="2%"></col>
@@ -80,14 +79,9 @@ function App() {
             <col width="2%"></col>
             <col width="2%"></col>
             <col width="2%"></col>
-            <col width="2%"></col>
-            <col width="2%"></col>
-            <col width="2%"></col>
-            <col width="2%"></col>
-            <col width="2%" />
           </colgroup>
           <tbody>
-            <tr>
+            <tr colspan="37">
               <td class="header1" colspan="37">
                 OWNER'S COPY
               </td>
