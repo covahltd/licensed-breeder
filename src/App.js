@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 // import {GetOwnersListMembersButton} from "./components/GetOwnersListMembersButton.js";
 import {PrintDivButton} from "./components/PrintDivButton.js"
+require('dotenv').config();
+require('dotenv-flow').config();
 
 function App() {
   return (
