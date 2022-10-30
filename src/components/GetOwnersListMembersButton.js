@@ -6,9 +6,9 @@ const apiKey = process.env.MAILCHIMP_API_KEY;
 const server = process.env.MAILCHIMP_SERVER;
 const ownersListId = process.env.MAILCHIMP_OWNERS_LIST_ID;
 
-console.log(apiKey);
-console.log(server);
-console.log(ownersListId);
+// console.log(apiKey);
+// console.log(server);
+// console.log(ownersListId);
 
 client.setConfig({
   apiKey: apiKey,
