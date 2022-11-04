@@ -1,18 +1,20 @@
 import React from "react";
 import "./App.css";
-// import {GetOwnersListMembersButton} from "./components/GetOwnersListMembersButton.js";
-import {PrintDivButton} from "./components/PrintDivButton.js"
-require('dotenv').config();
-require('dotenv-flow').config();
+import { OwnersListDropdown } from "./components/OwnersListDropdown";
+import { PrintDivButton } from "./components/PrintDivButton.js";
+// import { } from "./components/GetOwnersListMembersButton.js";
+// import { GetOwnersListMembersButton } from "./components/GetOwnersListMembersButton.js";
+require("dotenv").config();
+require("dotenv-flow").config();
 
 function App() {
   return (
     <div>
-      <div class="intro">
+      <div className="intro">
         <h1>Contract Generator</h1>
         <p>Pick a contract from the following dropdown:</p>
         <br />
-        <label for="contract-type">Choose a contract:</label>
+        <label htmlFor="contract-type">Choose a contract:</label>
         <br />
         <select name="contract-type" id="contract-type">
           <option value="standard_puppy">Standard Puppy</option>
@@ -22,14 +24,16 @@ function App() {
           <option value="breeding_terms_adult">Breeding Terms Adult</option>
         </select>
         <br />
-        <input type="button" onclick="run()" value="Run getListOwners"></input>
+        {/* <React.Suspense>
+          <OwnersListDropdown></OwnersListDropdown>
+        </React.Suspense> */}
         <br />
         <PrintDivButton></PrintDivButton>
         <br />
       </div>
-      <div class="page" id="printableArea">
+      <div className="page" id="printableArea">
         <table>
-          <colgroup>        
+          <colgroup>
             <col width="2%"></col>
             <col width="2%"></col>
             <col width="2%"></col>
@@ -83,313 +87,313 @@ function App() {
             <col width="2%"></col>
           </colgroup>
           <tbody>
-            <tr colspan="37">
-              <td class="header1" colspan="37">
+            <tr colSpan="37">
+              <td className="header1" colSpan="37">
                 OWNER'S COPY
               </td>
-              <td class="logo" colspan="13" rowspan="6">
+              <td className="logo" colSpan="13" rowSpan="6">
                 Shamisha
               </td>
             </tr>
             <tr>
-              <td class="header1" colspan="37">
+              <td className="header1" colSpan="37">
                 Section 1: Puppy's Details
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Puppy's Name
               </td>
-              <td class="value" colspan="25">
+              <td className="value" colSpan="25">
                 Sophie
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Puppy's Date of Birth
               </td>
-              <td class="value" colspan="25">
+              <td className="value" colSpan="25">
                 01/09/2022
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Puppy's Breed
               </td>
-              <td class="value" colspan="25">
+              <td className="value" colSpan="25">
                 Tibetan Terrier
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Puppy's Colour
               </td>
-              <td class="value" colspan="25">
+              <td className="value" colSpan="25">
                 Black &amp; White
               </td>
             </tr>
-            <tr class="blank-row">
-              <td colspan="50">
+            <tr className="blank-row">
+              <td colSpan="50">
                 <br />
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Worm/Flea Treatment Dates
               </td>
-              <td class="value" colspan="38">
+              <td className="value" colSpan="38">
                 Panacur Puppy - 15/09/2022, 06/10/2022, 27/10/2022 Advocate -
                 27/10/2022
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Kennel Club Registered Name
               </td>
-              <td class="value" colspan="38">
+              <td className="value" colSpan="38">
                 Shamisha Bianca
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Kennel Club Number
               </td>
-              <td class="value" colspan="38">
+              <td className="value" colSpan="38">
                 AZ16625208
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Microchip Number
               </td>
-              <td class="value" colspan="38">
+              <td className="value" colSpan="38">
                 900133000595299
               </td>
             </tr>
-            <tr class="blank-row">
-              <td colspan="50">
+            <tr className="blank-row">
+              <td colSpan="50">
                 <br />
               </td>
             </tr>
             <tr>
-              <td colspan="12"></td>
-              <td class="split-title" colspan="18">
+              <td colSpan="12"></td>
+              <td className="split-title" colSpan="18">
                 Sire (Father's) Details
               </td>
-              <td colspan="2"></td>
-              <td class="split-title" colspan="18">
+              <td colSpan="2"></td>
+              <td className="split-title" colSpan="18">
                 Dam (Mother's) Details
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Kennel Club Registered Name
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 Shamisha Strikes Gold
               </td>
-              <td colspan="2"></td>
-              <td class="value" colspan="18">
+              <td colSpan="2"></td>
+              <td className="value" colSpan="18">
                 Sophia Loren From Taste Of Ambrosia At Shamisha
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Kennel Club Number
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 AW02077501
               </td>
-              <td colspan="2"></td>
-              <td class="value" colspan="18">
+              <td colSpan="2"></td>
+              <td className="value" colSpan="18">
                 AY0911569
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Microchip Number
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 900133000266172
               </td>
-              <td colspan="2"></td>
-              <td class="value" colspan="18">
+              <td colSpan="2"></td>
+              <td className="value" colSpan="18">
                 990000004044873
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 DNA Tests
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 PLL, PRA3, PRA(rcd-4), NCL, PD
               </td>
-              <td colspan="2"></td>
-              <td class="value" colspan="18">
+              <td colSpan="2"></td>
+              <td className="value" colSpan="18">
                 PLL, PRA3, PRA(rcd-4), NCL, PD
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="12">
+              <td className="label" colSpan="12">
                 Health Tests
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 Hips 4/6 = 10
               </td>
-              <td colspan="2"></td>
-              <td class="value" colspan="18">
+              <td colSpan="2"></td>
+              <td className="value" colSpan="18">
                 Hips 5/5 = 10
               </td>
             </tr>
-            <tr class="blank-row">
-              <td colspan="50">
+            <tr className="blank-row">
+              <td colSpan="50">
                 <br />
               </td>
             </tr>
-            <tr class="header">
-              <td colspan="50">Section 2: Details of Both Parties</td>
+            <tr className="header">
+              <td colSpan="50">Section 2: Details of Both Parties</td>
             </tr>
             <tr>
-              <td colspan="7"></td>
-              <td class="split-title" colspan="18">
+              <td colSpan="7"></td>
+              <td className="split-title" colSpan="18">
                 Seller's Details
               </td>
-              <td class="label" colspan="7"></td>
-              <td class="split-title" colspan="18">
+              <td className="label" colSpan="7"></td>
+              <td className="split-title" colSpan="18">
                 Owner's Details
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Title
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 Mr
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Title
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 First Name(s)
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 Daniel Michael
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 First Name(s)
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Last Name
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 Lambert
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Last Name
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Address
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 Clearbury Lodge
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Address
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7"></td>
-              <td class="value" colspan="18">
+              <td className="label" colSpan="7"></td>
+              <td className="value" colSpan="18">
                 Nunton Drove
               </td>
-              <td class="label" colspan="7"></td>
-              <td class="value" colspan="18"></td>
+              <td className="label" colSpan="7"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7"></td>
-              <td class="value" colspan="18">
+              <td className="label" colSpan="7"></td>
+              <td className="value" colSpan="18">
                 Salisbury
               </td>
-              <td class="label" colspan="7"></td>
-              <td class="value" colspan="18"></td>
+              <td className="label" colSpan="7"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Postcode
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 SP5 4HZ
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Postcode
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Email
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 <a href="mailto:daniel@shamisha.co.uk">daniel@shamisha.co.uk</a>
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Email
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Phone Number
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 <a href="tel:07453100210">07453 100210</a>
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 {" "}
                 Phone Number
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
-            <tr class="blank-row">
-              <td colspan="50">
+            <tr className="blank-row">
+              <td colSpan="50">
                 <br />
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Invoice Number
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 INV-0245
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Total Paid
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 £1650.00
               </td>
             </tr>
-            <tr class="blank-row">
-              <td colspan="50">
+            <tr className="blank-row">
+              <td colSpan="50">
                 <br />
               </td>
             </tr>
-            <tr class="central-title">
-              <td colspan="50">Definitions</td>
+            <tr className="central-title">
+              <td colSpan="50">Definitions</td>
             </tr>
             <tr>
-              <td colspan="50">
-                <ul class="definitions-list">
+              <td colSpan="50">
+                <ul className="definitions-list">
                   <li>
                     {" "}
                     <b>“Good Health”</b> means a condition of health free of
@@ -428,16 +432,16 @@ function App() {
                 </ul>
               </td>
             </tr>
-            <tr class="blank-row">
-              <td colspan="50">
+            <tr className="blank-row">
+              <td colSpan="50">
                 <br />
               </td>
             </tr>
-            <tr class="central-title">
-              <td colspan="50">Terms and Conditions of Sale</td>
+            <tr className="central-title">
+              <td colSpan="50">Terms and Conditions of Sale</td>
             </tr>
             <tr>
-              <td class="tsandcs" colspan="50">
+              <td className="tsandcs" colSpan="50">
                 This is a legally binding contract of sale between the Seller
                 and the Owner of the Puppy all as detailed above in Section 1
                 and 2.
@@ -621,60 +625,60 @@ function App() {
                 </ol>
               </td>
             </tr>
-            <tr class="blank-row">
-              <td colspan="50">
+            <tr className="blank-row">
+              <td colSpan="50">
                 <br />
               </td>
             </tr>
             <tr>
-              <td class="split-title" colspan="25">
+              <td className="split-title" colSpan="25">
                 Breeder/Seller Declaration
               </td>
-              <td class="split-title" colspan="25">
+              <td className="split-title" colSpan="25">
                 Owner Declaration
               </td>
             </tr>
             <tr>
-              <td class="declaration" colspan="25">
+              <td className="declaration" colSpan="25">
                 By signing this contract, I agree and understand that I am
                 entering into a legal and binding contract.
               </td>
-              <td class="declaration" colspan="25">
+              <td className="declaration" colSpan="25">
                 By signing this contract, I agree and understand that I am
                 entering into a legal and binding contract.
               </td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Signed
               </td>
-              <td class="value" colspan="18"></td>
-              <td class="label" colspan="7">
+              <td className="value" colSpan="18"></td>
+              <td className="label" colSpan="7">
                 Signed
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Print Name
               </td>
-              <td class="value" colspan="18">
+              <td className="value" colSpan="18">
                 Mr Daniel M Lambert
               </td>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Print Name
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
             <tr>
-              <td class="label" colspan="7">
+              <td className="label" colSpan="7">
                 Date
               </td>
-              <td class="value" colspan="18"></td>
-              <td class="label" colspan="7">
+              <td className="value" colSpan="18"></td>
+              <td className="label" colSpan="7">
                 Date
               </td>
-              <td class="value" colspan="18"></td>
+              <td className="value" colSpan="18"></td>
             </tr>
           </tbody>
         </table>
