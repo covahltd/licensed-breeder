@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-// import { OwnersListDropdown } from "./components/OwnersListDropdown";
+import { OwnersListDropdown } from "./components/OwnersListDropdown";
 import { PrintDivButton } from "./components/PrintDivButton.js";
 // import { } from "./components/GetOwnersListMembersButton.js";
 // import { GetOwnersListMembersButton } from "./components/GetOwnersListMembersButton.js";
@@ -8,6 +8,9 @@ require("dotenv").config();
 require("dotenv-flow").config();
 
 function App() {
+  const [owner, setOwner] = React.useState({
+    merge_fields: {}
+  });
   return (
     <div>
       <div className="intro">
@@ -24,9 +27,9 @@ function App() {
           <option value="breeding_terms_adult">Breeding Terms Adult</option>
         </select>
         <br />
-        {/* <React.Suspense>
-          <OwnersListDropdown></OwnersListDropdown>
-        </React.Suspense> */}
+        <React.Suspense>
+          <OwnersListDropdown setOwner={setOwner}></OwnersListDropdown>
+        </React.Suspense>
         <br />
         <PrintDivButton></PrintDivButton>
         <br />
@@ -273,7 +276,9 @@ function App() {
               <td className="label" colSpan="7">
                 Title
               </td>
-              <td className="value" colSpan="18"></td>
+              <td className="value" colSpan="18">
+                {owner.merge_fields.TITLE}
+              </td>
             </tr>
             <tr>
               <td className="label" colSpan="7">

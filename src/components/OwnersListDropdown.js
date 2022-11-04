@@ -1,32 +1,32 @@
-import React from "react";
-require("dotenv").config();
-require("dotenv-flow").config();
-const client = require("@mailchimp/mailchimp_marketing");
+import React, { useEffect } from "react";
 
-const apiKey = process.env.MAILCHIMP_API_KEY;
-const server = process.env.MAILCHIMP_SERVER;
-const ownersListId = process.env.MAILCHIMP_OWNERS_LIST_ID;
+export const OwnersListDropdown = (props) => {
 
-client.setConfig({
-  apiKey: apiKey,
-  server: server,
-});
-
-
-async function getOwners() {
-  const response = await client.lists.getListMembersInfo(ownersListId, {
-    count: 1000,
-    fields: ["members.id", "members.email_address", "members.full_name", "members.merge_fields"],
-    offset: 200
-  });
-  // console.log(response.members.slice(-1)[0] );
-  console.log(response.members);
-  return response;
-}
-
-export const OwnersListDropdown = async () => {
-  const response = await getOwners();
-  return <select name="OwnersListDropdown" id="OwnersListDropdown">
-            <option value={response.members[0].merge_fields.FNAME}>{response.members[0].merge_fields.FNAME}</option>
-          </select>;
+  const [owners, setOwners] = React.useState();
+  useEffect(() => {
+    async function getOwnersNetlify() {
+      const response = await fetch('/.netlify/functions/GetOwnersList');
+      let ownersJSON = await response.json(); 
+      setOwners(ownersJSON);
+    }
+    getOwnersNetlify();
+  }, [setOwners]);
+  if (!owners) return;
+  function selectChanged(event) {
+    if (event.target.selectedIndex === 0) {
+      props.setOwner(null);
+    } else {
+      props.setOwner(owners.members[event.target.selectedIndex-1]);
+    }
+  };
+  return (
+    <select name="OwnersListDropdown" id="OwnersListDropdown" onChange={selectChanged}>
+      <option value=''>Choose an owner</option>
+      { 
+        owners.members.map((member) => {
+          return <option value={member.id} key={member.id}>{member.merge_fields.FNAME} {member.merge_fields.LNAME}</option>
+        })
+      }
+    </select>
+  );
 }
