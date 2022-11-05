@@ -2,7 +2,7 @@ import React from "react";
 import jwt_decode from "jwt-decode";
 import "./App.css";
 import { OwnersListDropdown } from "./components/OwnersListDropdown";
-import { PrintDivButton } from "./components/PrintDivButton.js";
+import { printDiv } from "./components/printDiv.js";
 import { format } from "./components/formatDate.js";
 
 require("dotenv").config();
@@ -12,9 +12,9 @@ function App() {
   const [user, setUser] = React.useState({});
 
   function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
+    // console.log("Encoded JWT ID token: " + response.credential);
     var userObject = jwt_decode(response.credential);
-    console.log(userObject);
+    // console.log(userObject);
     setUser(userObject);
     document.getElementById("signInDiv").hidden = true;
   }
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div>
-      <div id="signInDiv"></div>
+      <div className="signInDiv" id="signInDiv"></div>
       {Object.keys(user).length !== 0 && (
         <>
           <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
@@ -68,13 +68,9 @@ function App() {
               <OwnersListDropdown setOwner={setOwner}></OwnersListDropdown>
             </React.Suspense>
             <br />
-            <PrintDivButton></PrintDivButton>
+            <button onClick={() => printDiv("printableArea")}>Print</button>
             <br />
           </div>
-        </>
-      )}
-      {user && (
-        <>
           <div className="page" id="printableArea">
             <table>
               <colgroup>
@@ -136,7 +132,7 @@ function App() {
                     OWNER'S COPY
                   </td>
                   <td className="logo" colSpan="13" rowSpan="6">
-                    Shamisha
+                    <textarea id="logo" className="textarea logo" defaultValue="Shamisha"></textarea>
                   </td>
                 </tr>
                 <tr>
@@ -444,6 +440,7 @@ function App() {
                   </td>
                   <td className="value" colSpan="18">
                     <input
+                      id="total-paid"
                       className="input-box"
                       defaultValue="£1650.00"
                     ></input>
@@ -751,6 +748,7 @@ function App() {
                   </td>
                   <td className="value" colSpan="18">
                     <input
+                      id="date-seller"
                       className="input-box"
                       defaultValue={format(new Date())}
                     ></input>
@@ -760,6 +758,7 @@ function App() {
                   </td>
                   <td className="value" colSpan="18">
                     <input
+                      id="date-owner"
                       className="input-box"
                       defaultValue={format(new Date())}
                     ></input>
@@ -770,7 +769,8 @@ function App() {
           </div>
         </>
       )}
-    </div>
+          
+        </div>
   );
 }
 
