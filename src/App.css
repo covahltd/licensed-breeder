@@ -152,7 +152,7 @@ td, tr   {
   background: #fff;
   box-shadow: 0 0 5px rgba(0,0,0, 0.1);
 }
-.intro  {
+.intro, .signInDiv {
   width: 21cm;
   padding: 1cm;
   margin: 1cm auto;

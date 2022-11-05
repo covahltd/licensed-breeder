@@ -32,7 +32,7 @@ function App() {
       callback: handleCallbackResponse,
     });
 
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+    google.accounts.id.renderButton(document.getElementById("signInButton"), {
       theme: "outline",
       size: "large",
     });
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div>
-      <div className="signInDiv" id="signInDiv"></div>
+      <div id="signInDiv" className="signInDiv"><h1>Sign In</h1><div className="signInButton" id="signInButton"></div></div>
       {Object.keys(user).length !== 0 && (
         <>
           <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
