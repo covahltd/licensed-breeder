@@ -117,6 +117,14 @@ td, tr   {
   font-size: 12px;
   white-space: normal;
 }
+.input-box  {
+  border-width: 0px;
+  font-size: 12px;
+  font-family: Lato;
+  font-weight:400;
+  color: #2E3E48;
+}
+
 /* https://stackoverflow.com/questions/20446252/stretch-div-to-a4-size */
 .page {
   width: 21cm;
@@ -136,6 +144,11 @@ td, tr   {
   border-radius: 5px;
   background: #fff;
   box-shadow: 0 0 5px rgba(0,0,0, 0.1);
+}
+
+ul  {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @page {

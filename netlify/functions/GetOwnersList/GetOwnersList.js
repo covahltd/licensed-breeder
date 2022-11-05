@@ -11,11 +11,15 @@ client.setConfig({
   server: server,
 });
 
-
 async function getOwners() {
   const response = await client.lists.getListMembersInfo(ownersListId, {
     count: 1000,
-    fields: ["members.id", "members.email_address", "members.full_name", "members.merge_fields"],
+    fields: [
+      "members.id",
+      "members.email_address",
+      "members.full_name",
+      "members.merge_fields",
+    ],
     // offset: 200
   });
   // console.log(response.members.slice(-1)[0] );
@@ -29,14 +33,14 @@ const handler = async (event) => {
     const owners = await getOwners();
     return {
       statusCode: 200,
-      body: JSON.stringify( owners ),
+      body: JSON.stringify(owners),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
-    }
+    };
   } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+    return { statusCode: 500, body: error.toString() };
   }
-}
+};
 
-module.exports = { handler }
+module.exports = { handler };
