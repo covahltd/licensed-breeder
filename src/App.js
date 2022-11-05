@@ -132,7 +132,11 @@ function App() {
                     OWNER'S COPY
                   </td>
                   <td className="logo" colSpan="13" rowSpan="6">
-                    <textarea id="logo" className="textarea logo" defaultValue="Shamisha"></textarea>
+                    <textarea
+                      id="logo"
+                      className="textarea logo"
+                      defaultValue="Shamisha"
+                    ></textarea>
                   </td>
                 </tr>
                 <tr>
@@ -769,8 +773,7 @@ function App() {
           </div>
         </>
       )}
-          
-        </div>
+    </div>
   );
 }
 
