@@ -60,16 +60,13 @@ textarea.logo {
   font-family: Respective;
   font-size: 60px;
   color: #2E3E48;
-  text-align: center;
-  /* text-indent:-10px; */
+  text-align: right;
   padding-top: 20px;
   padding-left: 10px;
   border-width: 0px;
   width: 5cm;
+  height:2cm;
   resize: none;
-  /* height: 100px; */
-  /* padding-left:20px; */
-  /* white-space: nowrap; */
 }
 
 tr:first-child {
