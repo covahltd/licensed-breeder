@@ -46,7 +46,10 @@ function App() {
 
   return (
     <div>
-      <div id="signInDiv" className="signInDiv"><h1>Sign In</h1><div className="signInButton" id="signInButton"></div></div>
+      <div id="signInDiv" className="signInDiv">
+        <h1>Sign In</h1>
+        <div className="signInButton" id="signInButton"></div>
+      </div>
       {Object.keys(user).length !== 0 && (
         <>
           <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
@@ -128,9 +131,7 @@ function App() {
               </colgroup>
               <tbody>
                 <tr colSpan="37">
-                  <td className="header1" colSpan="37">
-                    OWNER'S COPY
-                  </td>
+                  <td className="header1" colSpan="37"></td>
                   <td className="logo" colSpan="13" rowSpan="6">
                     <textarea
                       id="logo"
@@ -158,6 +159,14 @@ function App() {
                   </td>
                   <td className="value" colSpan="25">
                     {owner.merge_fields.PUPPYDOB}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="label" colSpan="12">
+                    Puppy's Sex
+                  </td>
+                  <td className="value" colSpan="25">
+                    {owner.merge_fields.PUPPYSEX}
                   </td>
                 </tr>
                 <tr>
@@ -446,7 +455,7 @@ function App() {
                     <input
                       id="total-paid"
                       className="input-box"
-                      defaultValue="£1650.00"
+                      defaultValue="£1500.00"
                     ></input>
                   </td>
                 </tr>
